@@ -6,16 +6,15 @@ use ReallySimpleJWT\Token;
 
 final class EmailToken
 {
-    private const USER_ID = 1;
-    private const PASSWORD = 'sec!ReT423*&';     
+    private const PASSWORD = 'vil!Lasi423*&';     
 
     /** Issuing Token */
-    public static function issueToken()
+    public static function issueToken($applicant_id)
     {
         $expiration = time() + 86400;       // One day
         $issuer = $_SERVER['BASE_URL'];       
 
-        $token = Token::create(self::USER_ID, self::PASSWORD, $expiration, $issuer);
+        $token = Token::create($applicant_id, self::PASSWORD, $expiration, $issuer);
 
         return $token;
     }
