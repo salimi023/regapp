@@ -18,5 +18,8 @@ $db = new DB;
 // Token
 require_once(dirname(__FILE__, 2) . '/classes/EmailToken.php');
 
+// E-mail
+require_once(dirname(__FILE__, 2) . '/classes/Email.php');
+
 // Routing
 require_once('router.php');

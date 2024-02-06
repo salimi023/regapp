@@ -15,8 +15,8 @@ $router->post('/ajax', function() {
 });
 
 // Confirm page
-$router->get('/confirm/(\d+)', function($id) {    
-    header('Location: ' . $_SERVER['BASE_URL'] . 'controllers/confirm.php?id=' . $id);
+$router->get('/confirm/(\d+)?(\w+)', function($id, $token) {    
+    header('Location: ' . $_SERVER['BASE_URL'] . 'controllers/confirm.php?id=' . $id . '&token=' . $token);
 });
 
 // Run it!
