@@ -39,8 +39,8 @@ final class Email
         $mail->Encoding = 'base64';
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                                    //Enable verbose debug output
         $mail->isSMTP();                                                            //Send using SMTP                             
-        $mail->Host       = '172.17.0.1:1025';        
-        $mail->Port       = 1025;                                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`         
+        $mail->Host       = $_SERVER['EMAIL_HOST'];        
+        $mail->Port       = $_SERVER['EMAIL_PORT'];                                 //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`         
             
         //Recipients
         $mail->setFrom('dunakeszijitsu@gmail.com', 'Villási Ju-Jitsu Egyesület');
