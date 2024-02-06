@@ -20,7 +20,8 @@ final class Ajax
             // E-mail
             require_once('classes/Email.php');
 
-            if($captcha->checkCaptcha($data['captcha'])) { 
+            if($captcha->checkCaptcha($data['captcha'])) {
+                unset($data['captcha']); 
                 $saved_applicant = DB::getApplicantByEmail($data['email']);            
                 
                 if(!$saved_applicant) {
