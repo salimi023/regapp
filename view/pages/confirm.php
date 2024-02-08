@@ -1,9 +1,5 @@
-<?php
-//require_once('../../bootstrap.php');
-//require_once('../templates/head.php');
+<?php require_once(dirname(__FILE__, 2) . '/templates/head.php'); ?>
 
-if($_GET['id']) {
-    echo $_GET['id'];
-}
+<h1><?php echo $message; ?></h1>
 
-//require_once('../templates/footer.php');
+<?php require_once(dirname(__FILE__, 2) . '/templates/footer.php');

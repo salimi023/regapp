@@ -22,18 +22,18 @@ final class Ajax
 
             if($captcha->checkCaptcha($data['captcha'])) {
                 unset($data['captcha']); 
-                $saved_applicant = DB::getApplicantByEmail($data['email']);            
+                $saved_applicant = DB::getApplicantByEmail('applicant', $data['email']);            
                 
                 if(!$saved_applicant) {
-                    $applicant_id = DB::saveData($data);
+                    $applicant_id = DB::saveData('applicant', $data);
 
                     if($applicant_id) {
-                        $email_sending = Email::Confirm($data['email'], $data['name'], $data['selected_date'], $applicant_id);                    
+                        $email_sending = Email::SendEmail($data['email'], $data['name'], $data['selected_date'], $applicant_id);                    
                         
                         if($email_sending) {
                             $result = 'okay';
                         } else {
-                            DB::deleteData($applicant_id);
+                            DB::deleteData('applicant', $applicant_id);
                             $result = 'email_error';
                         }                               
                     } else {

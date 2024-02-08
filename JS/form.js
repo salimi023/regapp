@@ -21,7 +21,7 @@ $(document).ready(function() {
                     type: "POST",
                     data: {name: name, email: email, selected_date: selected_date, consent: consent, captcha: captcha},
                     dataType: "html",
-                    success: function(response) {                                                
+                    success: function(response) {                                                                                                                        
                         if(response === 'okay') {
                             alert('Sikeres mentés! Kérem, ellenőrizze az e-mail fiókját és erősítse meg a regisztrációt!');
                             location.reload();

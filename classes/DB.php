@@ -18,9 +18,9 @@ final class DB
      * @param array $data
      * @return boolean
      */    
-    public static function saveData($data = [])
+    public static function saveData($table, $data = [])
     {
-        $applicant = R::dispense('applicant');
+        $applicant = R::dispense($table);
 
         foreach($data as $column => $value) {
             $applicant[$column] = $value;            
@@ -38,12 +38,10 @@ final class DB
      * @param integer $applicant_id
      * @return boolean
      */
-    public static function getApplicantByEmail($email)
+    public static function getApplicantByEmail($table, $email)
     {
-        $applicant = R::find('applicant', ' email = ? ', [$email]);
-
-        // var_dump($applicant);
-
+        $applicant = R::find($table, ' email = ? ', [$email]);
+        
         if(count($applicant) == 0) {
             $result = false;
         } else {
@@ -58,12 +56,11 @@ final class DB
      * 
      * @param integer $applicant_id
      */
-    public static function updateData($applicant_id)
+    public static function updateData($table, $applicant_id)
     {
-        $table = R::dispense('applicant');
-        $applicant = R::load($applicant_id);
-        $applicant['status'] = 2;
-        $update = R::store('applicant');
+        $applicant = R::load($table, $applicant_id);        
+        $applicant->status = 2;
+        $update = R::store($applicant);
         
         return $update;
     } 
@@ -73,10 +70,11 @@ final class DB
      * 
      * @param integer $applicant_id
      */
-    public static function deleteData($applicant_id)
+    public static function deleteData($table, $applicant_id)
     {
-        $table = R::dispense('applicant');        
         $applicant = R::load($table, $applicant_id);
-        R::trash($applicant);
+        $delete = R::trash($applicant);
+
+        return $delete;
     }
 }

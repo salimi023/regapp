@@ -27,7 +27,7 @@
 
             <div class="w3-margin-bottom">
                 <label for="captcha">Kérem, írja be milyen nap van ma:</label>
-                <input type="text" name="captcha" id="captcha" class="w3-input w3-border valid" placeholder="pl. hétfő" />
+                <input type="text" name="captcha" id="captcha" class="w3-input w3-border valid" placeholder="pl. hétfő" value="csütörtök" />
                 <span class="alert"></span>
             </div>
             <div class="w3-margin-bottom">

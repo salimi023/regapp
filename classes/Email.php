@@ -22,10 +22,10 @@ final class Email
      * 
      * @return string 
      */
-    public static function Confirm($email, $name, $selected_date, $applicant_id)
+    public static function SendEmail($email, $name, $selected_date, $applicant_id)
     {
-        $token = EmailToken::issueToken($applicant_id);
-        $url = $_SERVER['BASE_URL'] . 'confirm/' . $applicant_id . '/' . $token;         
+        $token = EmailToken::issueToken($applicant_id);         
+        $url = $_SERVER['BASE_URL'] . 'config/init.php?id=' . $applicant_id . '&token=' . $token;         
 
         $html_msg = "<p><strong>Kedves {$name}!</strong></p>";
         $html_msg .= "A {$email} címeddel regisztráció érkezett a Női Önvédelem Nyílt Napra.<br />";
