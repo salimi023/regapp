@@ -12,5 +12,4 @@
 
 <body>
     <div id="wrapper" class="w3-row-padding">
-        <span data-url="<?php echo $_SERVER['BASE_URL']; ?>" id="validationStatus" class="w3-hide"></span>
-        <div id="header" class="w3-row">Header</div>
+        <span data-url="<?php echo $_SERVER['BASE_URL']; ?>" id="validationStatus" class="w3-hide"></span>       

@@ -1,3 +1,29 @@
+body {
+    background-color: #003D60;
+}
+
 .alert {
     color: #ff0000
+}
+
+#promo {
+    position: relative;
+    width: 99%;
+    margin: 0 auto 0 auto
+}
+
+#promo_img {
+    width: 100%;
+    margin: 0 auto 0 auto
+}
+
+#reg_btn_container {
+    position: absolute;
+    z-index: 1;
+    left: 8%;
+    top: 260% 
+}
+
+#reg_btn {
+    background-color: #FF9268 !important
 }
