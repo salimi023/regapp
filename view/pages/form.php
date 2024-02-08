@@ -11,22 +11,25 @@
             <div class="w3-modal-content">
                 <div class="w3-container">
                     <span id="close_modal" class="w3-button w3-display-topright">&times;</span>
-                    <h2>Regisztráció</h2>
+                    <h2><strong>Regisztráció</strong></h2>
+                    <p>Minden mező kitöltése <strong>kötelező</strong>!<br />
+                    A regisztráció után kérlek, ellenőrizd a <strong>megadott e-mail címet</strong>.<br />
+                    A regisztráció megerősítésére <strong>2 nap</strong> áll rendelkezésedre.</p>
                     <div id="form" class="w3-row">
                         <div class="w3-margin-bottom">
-                            <label for="name">Név:</label>
+                            <label for="name"><strong>Név:</strong></label>
                             <input type="text" name="name" id="name" class="w3-input w3-border valid" />
                             <span class="alert"></span>
                         </div>
 
                         <div class="w3-margin-bottom">
-                            <label for="name">E-mail:</label>
+                            <label for="name"><strong>E-mail:</strong></label>
                             <input type="email" name="email" id="email" class="w3-input w3-border valid" />
                             <span class="alert"></span>
                         </div>
 
                         <div class="w3-margin-bottom">
-                            <label for="date">Dátumok:</label><br />
+                            <label for="date"><strong>Dátumok:</strong></label><br />
                             <input type="radio" name="date" id="date1" class="w3-radio valid"
                                 value="2024-03-23" />&nbsp;2024.
                             március 23.<br />
@@ -40,12 +43,12 @@
                             <input type="checkbox" name="consent" id="consent" class="w3-check valid"
                                 value="" />&nbsp;Elolvastam és
                             elfogadom az
-                            Adatvédelmi Tájékoztatóban foglaltakat!<br />
+                            <strong>Adatvédelmi Tájékoztatóban</strong> foglaltakat!<br />
                             <span class="alert"></span>
                         </div>
 
                         <div class="w3-margin-bottom">
-                            <label for="captcha">Kérem, írja be milyen nap van ma:</label>
+                            <label for="captcha">Kérlek, írd be <strong>milyen nap van ma</strong>:</label>
                             <input type="text" name="captcha" id="captcha" class="w3-input w3-border valid"
                                 placeholder="pl. hétfő" value="" />
                             <span class="alert"></span>

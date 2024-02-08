@@ -28,9 +28,10 @@ final class Email
         $url = $_SERVER['BASE_URL'] . 'config/init.php?id=' . $applicant_id . '&token=' . $token;         
 
         $html_msg = "<p><strong>Kedves {$name}!</strong></p>";
-        $html_msg .= "A {$email} címeddel regisztráció érkezett a Női Önvédelem Nyílt Napra.<br />";
-        $html_msg .= "A nyílt nap időpontja: {$selected_date}<br />";
+        $html_msg .= "A <strong>{$email}</strong> címeddel regisztráció érkezett a <strong>Női Önvédelem Nyílt Napra.</strong><br />";
+        $html_msg .= "A nyílt nap regisztrált időpontja: <strong>{$selected_date}.</strong><br />";
         $html_msg .= "Amennyiben Te regisztráltál kérlek, azt erre a <a href=\"{$url}\">HIVATKOZÁSRA</a> kattintva erősítsd meg.<br />";
+        $html_msg .= "A regisztráció megerősítésére <strong>2 nap</strong> áll rendelkezésedre, ezt követően a regisztráció törlődik.<br />";
         $html_msg .= 'Ha nem Te regisztráltál kérlek, hagyd ezt az e-mailt figyelmen kívül.';
         $html_msg .= '<p>Üdvözlettel: Megyeri József</p>';
 

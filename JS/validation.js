@@ -7,11 +7,11 @@ $(document).ready(function() {
         var validStatus = [];
         var fileAlert, textAlert, emailAlert, passwordAlert, passwordLengthAlert, passwordConfAlert, selectAlert, textareaAlert, checkBoxRadioAlert;
 
-        var lang = "hu";
+        var lang = "hu_informal";
 
         switch (lang) {
 
-            case "hu":
+            case "hu_formal":
                 fileAlert = "Kérem, válasszon ki egy fájlt!";
                 textAlert = "Kérem, töltse ki a mezőt!";
                 emailAlert = "Kérem, adjon meg egy érvényes e-mail címet!";
@@ -21,6 +21,18 @@ $(document).ready(function() {
                 selectAlert = "Kérem, válasszon egy lehetőséget!";
                 textareaAlert = "Kérem, töltse ki a szövegmezőt!";
                 checkBoxRadioAlert = "Kérem, válasszon a lehetőségek közül!";
+                break;
+
+            case "hu_informal":
+                fileAlert = "Kérlek, válassz ki egy fájlt!";
+                textAlert = "Kérlek, töltsd ki a mezőt!";
+                emailAlert = "Kérlek, adj meg egy érvényes e-mail címet!";
+                passwordAlert = "Kérlek, adj meg egy jelszót!";
+                passwordLengthAlert = "A jelszó minimális hossza 6 karakter!";
+                passwordConfAlert = "A megadott jelszavak nem egyeznek meg egymással!";
+                selectAlert = "Kérlek, válassz egy lehetőséget!";
+                textareaAlert = "Kérlek, töltsd ki a szövegmezőt!";
+                checkBoxRadioAlert = "Kérlek, válassz a lehetőségek közül!";
                 break;
 
             case "en":

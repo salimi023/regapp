@@ -23,7 +23,7 @@ $(document).ready(function() {
                     dataType: "html",
                     success: function(response) {                                                                                                                        
                         if(response === 'okay') {
-                            alert('Sikeres mentés! Kérem, ellenőrizze az e-mail fiókját és erősítse meg a regisztrációt!');
+                            alert('Sikeres mentés! Kérlek, ellenőrizd az e-mail fiókod és erősítsd meg a regisztrációt!');
                             location.reload();
                         } else {                            
                             switch(response) {
@@ -33,19 +33,19 @@ $(document).ready(function() {
                                 
                                 case 'db_error':
                                 case 'no_data':
-                                    msg = 'Sikertelen mentés. Kérem, próbálja meg újra.';
+                                    msg = 'Sikertelen mentés. Kérlek, próbáld meg újra.';
                                     break;
 
                                 case 'email_error':
-                                    msg = 'A megadott e-mail címre nem sikerült üzenetet küldeni. Kérem, ellenőrizze az e-mail címet.';
+                                    msg = 'A megadott e-mail címre nem sikerült üzenetet küldeni. Kérlek, ellenőrizd az e-mail címet.';
                                     break;
 
                                 case 'captcha':
-                                    msg = 'Kérem, ellenőrizze a megadott napot!';
+                                    msg = 'Kérlek, ellenőrizd a megadott napot!';
                                     break;
 
                                 default:
-                                    'Ismeretlen hiba. Kérem, próbálja újra.';
+                                    'Ismeretlen hiba. Kérlek, próbáld meg újra.';
                                     break;
                             }
 
