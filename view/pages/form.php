@@ -1,8 +1,10 @@
         <div id="intro" class="w3-row">
             <div id="promo">
-                <img id="promo_img" src="<?php echo $_SERVER['BASE_URL']; ?>images/noi_onvedelem.jpg" alt="Nyílt Nap" />
+                <img id="promo_img" src="<?php echo $_SERVER['BASE_URL']; ?>images/noi_onvedelem2.jpg"
+                    alt="Nyílt Nap" />
             </div>
-            <div id="reg_btn_container"><button id="reg_btn" class="w3-btn w3-round w3-xxlarge">REGISZTRÁCIÓ</button>
+            <div id="reg_btn_container" class="w3-row w3-padding w3-center"><button id="reg_btn"
+                    class="w3-btn w3-round w3-xxlarge">REGISZTRÁCIÓ</button>
             </div>
         </div>
 
@@ -13,8 +15,8 @@
                     <span id="close_modal" class="w3-button w3-display-topright">&times;</span>
                     <h2><strong>Regisztráció</strong></h2>
                     <p>Minden mező kitöltése <strong>kötelező</strong>!<br />
-                    A regisztráció után kérlek, ellenőrizd a <strong>megadott e-mail címet</strong>.<br />
-                    A regisztráció megerősítésére <strong>2 nap</strong> áll rendelkezésedre.</p>
+                        A regisztráció után kérlek, ellenőrizd a <strong>megadott e-mail címet</strong>.<br />
+                        A regisztráció megerősítésére <strong>2 nap</strong> áll rendelkezésedre.</p>
                     <div id="form" class="w3-row">
                         <div class="w3-margin-bottom">
                             <label for="name"><strong>Név:</strong></label>
@@ -59,4 +61,4 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>

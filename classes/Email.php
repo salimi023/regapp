@@ -29,7 +29,8 @@ final class Email
 
         $html_msg = "<p><strong>Kedves {$name}!</strong></p>";
         $html_msg .= "A <strong>{$email}</strong> címeddel regisztráció érkezett a <strong>Női Önvédelem Nyílt Napra.</strong><br />";
-        $html_msg .= "A nyílt nap regisztrált időpontja: <strong>{$selected_date}.</strong><br />";
+        $html_msg .= "A nyílt nap regisztrált időpontja: <strong>{$selected_date} délelőtt 10-12 óra.</strong><br />";
+        $html_msg .= "Helyszín: <strong>Amazon Stúdió, Dunakeszi Magyar utca 59.</strong><br />";
         $html_msg .= "Amennyiben Te regisztráltál kérlek, azt erre a <a href=\"{$url}\">HIVATKOZÁSRA</a> kattintva erősítsd meg.<br />";
         $html_msg .= "A regisztráció megerősítésére <strong>2 nap</strong> áll rendelkezésedre, ezt követően a regisztráció törlődik.<br />";
         $html_msg .= 'Ha nem Te regisztráltál kérlek, hagyd ezt az e-mailt figyelmen kívül.';

@@ -8,7 +8,8 @@ body {
 
 #promo {
     position: relative;
-    width: 99%;
+    max-width: 1600px;
+    width: 100%;
     margin: 0 auto 0 auto
 }
 
@@ -17,13 +18,39 @@ body {
     margin: 0 auto 0 auto
 }
 
-#reg_btn_container {
-    position: absolute;
-    z-index: 1;
-    left: 8%;
-    top: 260% 
+#reg_btn {    
+    background-color: #FE9269 !important;
+    color: black;
+    font-weight: bolder;
+    border: solid black thin;
+    opacity: 0.70    
 }
 
-#reg_btn {
-    background-color: #FF9268 !important
+#reg_msg_container {
+    position: fixed;
+    top: 150px;
+    left: 10%;
+    width: 80%;
+    height: 150px !important;
+    margin: 0 auto 0 auto !important;
+    font-size: 3em;
+    border-radius: 10px;
+    color: #FFF !important
+}
+
+@media only screen and (max-width: 500px) {
+
+    #reg_btn, #reg_msg_container {
+        font-size: 1.5em !important
+    }
+
+    #reg_msg_container {
+        top: 100px
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    #reg_msg_container {
+        font-size: 2em
+    }
 }
