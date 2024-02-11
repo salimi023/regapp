@@ -14,16 +14,5 @@ $router->post('/ajax', function() {
     require_once(dirname(__FILE__, 2) . '/controllers/ajax.php');
 });
 
-// Confirm page
-/*$router->get('/confirm/(\d+)?(\w+)', function($id, $token) {    
-    header('Location: ' . $_SERVER['BASE_URL'] . 'controllers/confirm.php?id=' . $id . '&token=' . $token);
-});*/
-
-/*$router->get('/confirm(/\d+)?(/[a-z0-9_-]+)', function($id, $token) {    
-    header('Location: ' . $_SERVER['BASE_URL'] . 'controllers/confirm.php?id=' . $id . '&token=' . $token);
-});*/
-
-
-
 // Run it!
 $router->run();
