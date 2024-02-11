@@ -16,6 +16,6 @@ if(isset($_POST['name'])) {
     ];
 }
 
-$result = Ajax::Ajax($applicant_data);
+$result = Ajax::sendAjax($applicant_data);
 
 echo $result;

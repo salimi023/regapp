@@ -12,7 +12,7 @@
      * @param String $app_status (DEVELOPMENT, PRODUCTION)
      */
     
-    public static function Logs($app_status)
+    public static function Logging($app_status)
     {
         $display = $app_status === 'DEVELOPMENT' ? true : false;
         

@@ -10,7 +10,7 @@ final class Ajax
      * @param array $data
      * @return boolean or string
      */    
-    public static function Ajax($data = [])
+    public static function sendAjax($data = [])
     {
         if(count($data) > 0) {
             // Captcha 

@@ -16,7 +16,7 @@ final class Captcha
         $captcha_local = mb_strtolower($captcha, 'UTF-8');
         $today_eng = strtolower(date('l'));
 
-        if(phpversion() >= '8.0') {
+        if(version_compare(PHP_VERSION, '8.0.0', '<=')) {
             $dayname = match($today_eng) {
                 'sunday' => 'vasárnap',
                 'monday' => 'hétfő',
