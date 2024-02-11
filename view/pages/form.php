@@ -45,7 +45,7 @@
                             <input type="checkbox" name="consent" id="consent" class="w3-check valid"
                                 value="" />&nbsp;Elolvastam és
                             elfogadom az
-                            <strong>Adatvédelmi Tájékoztatóban</strong> foglaltakat!<br />
+                            <strong><a href="<?php echo $_SERVER['BASE_URL']; ?>adatvedelmi-nyilatkozat" target="_blank">Adatvédelmi Tájékoztatóban</a></strong> foglaltakat!<br />
                             <span class="alert"></span>
                         </div>
 
