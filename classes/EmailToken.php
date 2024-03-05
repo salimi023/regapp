@@ -6,7 +6,7 @@ use ReallySimpleJWT\Token;
 
 final class EmailToken
 {
-    private const PASSWORD = 'vil!Lasi423*&';     
+    private const PASSWORD = $_SERVER['EMAIL_TOKEN_PASSWORD'];     
 
     /** 
      * Issuing Token 
