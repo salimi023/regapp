@@ -36,6 +36,56 @@ final class Email
         $html_msg .= 'Ha nem Te regisztráltál kérlek, hagyd ezt az e-mailt figyelmen kívül.';
         $html_msg .= '<p>Üdvözlettel: Megyeri József</p>';
 
+        $send_email = self::EmailConfig('email', $html_msg, $email, $name);
+
+        return $send_email;              
+    }
+
+    /**
+     * Send report (Cronjob)
+     * 
+     * @param string $email
+     * @param string $name
+     * @param string $filename
+     * 
+     * @return boolean
+     */
+    public static function SendReport($email, $name, $filename)
+    {
+        $html_msg = '<p><strong>Szia!</strong></p>';
+        $html_msg .= 'A legutóbb regisztráltak listája a csatolt fájlban található.';
+        $html_msg .= '<p>Üdv!</p>';
+
+        $send_report = self::EmailConfig('report', $html_msg, $email, $name, $filename);
+        
+        return $send_report;
+    }
+
+    /**
+     * Email configuration
+     * 
+     * @param string $action
+     * @param string $html_msg
+     * @param string $email
+     * @param string $name
+     * @param string $filename
+     * 
+     * @return boolean
+     */
+    private static function EmailConfig($action, $html_msg, $email, $name, $filename = false)
+    {
+        switch($action) {
+            case 'email':
+                $setFromEmail = 'dunakeszijitsu@gmail.com';
+                $setFromName = 'Villási Ju-Jitsu Egyesület';
+                break;
+            
+            case 'report':
+                $setFromEmail = 'dunakeszijitsu@gmail.com';
+                $setFromName = 'Napi regisztrációk';
+                break;
+        }               
+        
         $mail = new PHPMailer(true);
          
         $mail->CharSet = 'utf-8';
@@ -46,13 +96,17 @@ final class Email
         $mail->Port       = $_SERVER['EMAIL_PORT'];                                 //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`         
             
         //Recipients
-        $mail->setFrom('dunakeszijitsu@gmail.com', 'Villási Ju-Jitsu Egyesület');
+        $mail->setFrom($setFromEmail, $setFromName);
         $mail->addAddress($email, $name);                                           //Add a recipient                               
         
         //Content
         $mail->isHTML(true);                                                        //Set email format to HTML
         $mail->Subject = 'Regisztráció Nyílt Napra ';
-        $mail->Body    = $html_msg;        
+        $mail->Body    = $html_msg; 
+        
+        if($action === 'report') {
+            $mail->addAttachment($filename);                                        // Attaching report
+        }
         
         if($mail->send()) {
             $result = true;
@@ -60,6 +114,6 @@ final class Email
             $result = false;
         }              
 
-        return $result;                       
+        return $result;                    
     }
 }

@@ -32,5 +32,13 @@ if(isset($_GET['token'])) {
     require_once(dirname(__FILE__, 2) . '/controllers/confirm.php');    // Confirm
 }
 
+// Cronjobs
+require_once(dirname(__FILE__, 2) .  '/classes/Cron.php');              // Cron
+
+if(isset($_GET['cron'])) {
+    $action = $_GET['cron'];
+    Cron::$action();
+}
+
 // Routing
 require_once('router.php');
