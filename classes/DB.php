@@ -33,7 +33,7 @@ final class DB
     }
 
     /**
-     * Get Data
+     * Get Applicant by Email
      * 
      * @param integer $applicant_id
      * @return boolean
@@ -52,14 +52,27 @@ final class DB
     }
 
     /**
+     * Get Data
+     * 
+     * @param string $table
+     * @param string $sql
+     * 
+     * @return array
+     */
+    public static function getData($table, $sql = false)
+    {
+        return R::findAll($table, $sql);
+    }
+
+    /**
      * Update Data
      * 
      * @param integer $applicant_id
      */
-    public static function updateData($table, $applicant_id)
+    public static function updateData($table, $applicant_id, $value = false)
     {
-        $applicant = R::load($table, $applicant_id);        
-        $applicant->status = 2;
+        $applicant = R::load($table, $applicant_id);              
+        $applicant->status = $value ? $value : 2;
         $update = R::store($applicant);
         
         return $update;
