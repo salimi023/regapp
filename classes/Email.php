@@ -105,7 +105,8 @@ final class Email
         $mail->Body    = $html_msg; 
         
         if($action === 'report') {
-            $mail->addAttachment($filename);                                        // Attaching report
+            $mail->addAttachment($filename);                                         // Attaching report
+            $mail->addCC('hun.saller@gmail.com');                                    // Copy to admin   
         }
         
         if($mail->send()) {
