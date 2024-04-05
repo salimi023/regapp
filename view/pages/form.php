@@ -32,13 +32,7 @@
 
                         <div class="w3-margin-bottom">
                             <label for="date"><strong>Dátumok:</strong></label><br />
-                            <input type="radio" name="date" id="date1" class="w3-radio valid"
-                                value="2024-03-23" />&nbsp;2024.
-                            március 23.<br />
-                            <input type="radio" name="date" id="date2" class="w3-radio valid"
-                                value="2024-04-06" />&nbsp;2024.
-                            április 06.<br />
-                            <span class="alert"></span>
+                            <div id="date_inputs"></div>                            
                         </div>
 
                         <div class="w3-margin-bottom">
