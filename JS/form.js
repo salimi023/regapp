@@ -1,4 +1,33 @@
 $(document).ready(function() {
+
+    /**
+     * Checking date and disable the passed ones
+     */
+    var date = new Date();
+    var day = String(date.getDay());
+    var month = String(date.getMonth() + 1);
+    var year = date.getFullYear();
+    var formatted_month = month.length < 2 ? '0' + month : month;
+    var formatted_day = day.length < 2 ? '0' + day : day;    
+
+    var formatted_date = year + '-' + formatted_month + '-' + formatted_day;    
+
+    // Date format: YYYY-mm-dd
+    var event_dates = [
+        '2024-03-23',
+        '2024-04-06'
+    ];
+
+    for(var x in event_dates) {       
+        
+        if(formatted_date >= event_dates[x]) {
+            $("input[name='date']").each(function() {               
+                if($(this).val() === event_dates[x]) {
+                    $(this).prop("disabled", true);
+                }
+            });
+        }
+    }                          
     
     $("button#send").on("click", function() {
         
@@ -7,14 +36,14 @@ $(document).ready(function() {
          */
         setTimeout(function() {
             if($("span#validationStatus").text() === "") {
-                var name, email, selected_date, consent, captcha, base_url, msg;
+                var name, email, selected_date, consent, captcha, base_url, msg, date, formatted_date;
 
                 base_url = $("span#validationStatus").data("url");
                 name = $("input#name").val();
                 email = $("input#email").val();
                 selected_date = $("input[name='date']:checked").val();
                 consent = $("input#consent").is(":checked") ? 1 : 2;
-                captcha = $("input#captcha").val();                                
+                captcha = $("input#captcha").val();                     
 
                 $.ajax({                                        
                     url: base_url + 'ajax',
