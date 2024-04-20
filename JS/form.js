@@ -14,8 +14,7 @@ $(document).ready(function() {
 
     // Date format: YYYY-mm-dd
     var event_dates = [
-        '2024-03-23',
-        '2024-04-06'        
+        '2024-04-27'        
     ];
 
     if(event_dates.length > 0) {
